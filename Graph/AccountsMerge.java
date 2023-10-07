@@ -59,16 +59,15 @@ public class AccountsMerge {
     }
     public static void main (String[] args) {
         
-        List<List<String>> accounts = new ArrayList() {
-            {
-                add(new ArrayList<String>(Arrays.asList("John", "j1@com", "j2@com", "j3@com")));
-                add(new ArrayList<String>(Arrays.asList("John", "j4@com")));
-                add(new ArrayList<String>(Arrays.asList("Raj", "r1@com", "r2@com")));
-                add(new ArrayList<String>(Arrays.asList("John", "j1@com", "j5@com")));
-                add(new ArrayList<String>(Arrays.asList("Raj", "r2@com", "r3@com")));
-                add(new ArrayList<String>(Arrays.asList("Mary", "m1@com")));
-            }
-        };
+        List<List<String>> accounts = new ArrayList<>();
+
+        accounts.add(new ArrayList<>(Arrays.asList("John", "j1@com", "j2@com", "j3@com")));
+        accounts.add(new ArrayList<>(Arrays.asList("John", "j4@com")));
+        accounts.add(new ArrayList<>(Arrays.asList("Raj", "r1@com", "r2@com")));
+        accounts.add(new ArrayList<>(Arrays.asList("John", "j1@com", "j5@com")));
+        accounts.add(new ArrayList<>(Arrays.asList("Raj", "r2@com", "r3@com")));
+        accounts.add(new ArrayList<>(Arrays.asList("Mary", "m1@com")));
+
 
         List<List<String>> ans = accountsMerge(accounts);
 
