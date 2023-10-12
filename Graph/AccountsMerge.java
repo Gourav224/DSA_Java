@@ -34,22 +34,22 @@ public class AccountsMerge {
             }
         }
 
-        ArrayList<String>[] mergedMail = new ArrayList[n];
-        for (int i = 0; i < n; i++) mergedMail[i] = new ArrayList<String>();
+        ArrayList<ArrayList<String>> mergedMail = new ArrayList<>();
+        for (int i = 0; i < n; i++) mergedMail.add( new ArrayList<>());
         for (Map.Entry<String, Integer> it : mapMailNode.entrySet()) {
             String mail = it.getKey();
             int node = ds.findUPar(it.getValue());
-            mergedMail[node].add(mail);
+            mergedMail.get(node).add(mail);
         }
 
         List<List<String>> ans = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
-            if (mergedMail[i].size() == 0) continue;
-            Collections.sort(mergedMail[i]);
+            if (mergedMail.get(i).size() == 0) continue;
+            Collections.sort(mergedMail.get(i));
             List<String> temp = new ArrayList<>();
             temp.add(details.get(i).get(0));
-            for (String it : mergedMail[i]) {
+            for (String it : mergedMail.get(i)) {
                 temp.add(it);
             }
             ans.add(temp);
